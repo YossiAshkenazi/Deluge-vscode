@@ -1,136 +1,126 @@
 {
-	"name": "delugelang",
-	"displayName": "Deluge",
-	"description": "Deluge language support for Visual Studio Code",
-	"version": "0.0.4",
-	"author": {
-		"name": "Guru Dhanush",
-		"email": "gurudhanush@outlook.com"
-	},
-	"galleryBanner": {
-		"color": "#278ee8",
-		"theme": "dark"
-	},
-	"icon": "media/icon.png",
-	"engines": {
-		"vscode": "^1.26.0"
-	},
-	"preview": true,
-	"publisher": "gdp",
-	"badges": [
-		{
-			"url": "https://vsmarketplacebadge.apphb.com/version-short/gdp.delugelang.svg",
-			"description": "Market place version",
-			"href": "https://marketplace.visualstudio.com/items?itemName=gdp.delugelang"
-		},
-		{
-			"url": "https://vsmarketplacebadge.apphb.com/installs/gdp.delugelang.svg",
-			"description": "Installs",
-			"href": "https://marketplace.visualstudio.com/items?itemName=gdp.delugelang"
-		}
-	],
-	"activationEvents": [
-		"onLanguage:dg"
-	],
-	"main": "./dist/extension",
-	"categories": [
-		"Programming Languages",
-		"Snippets"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/GuruDhanush/Deluge-vscode"
-	},
-	"license": "MIT",
-	"keywords": [
-		"deluge",
-		"zoho"
-	],
-	"contributes": {
-		"commands": [
-			{
-				"command": "delugelang.showView",
-				"title": "Shows the message part as rendered in client",
-				"category": "Deluge",
-				"enablement": "editorLangId == dg"
-			},
-			{
-				"command": "delugelang.restartLangServer",
-				"title": "Restarts the Deluge Language server",
-				"category": "Deluge",
-				"enablement": "editorLangId == dg"
-			}
-		],
-		"languages": [
-			{
-				"id": "dg",
-				"extensions": [
-					".dg"
-				],
-				"aliases": [
-					"deluge",
-					"dg"
-				],
-				"configuration": "./language-configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "dg",
-				"scopeName": "source.dg",
-				"path": "./syntaxes/deluge.tmLanguage.json"
-			}
-		],
-		"snippets": [
-			{
-				"language": "dg",
-				"path": "./snippets/snippets.json"
-			}
-		],
-		"configuration": {
-			"type": "object",
-			"title": "Deluge configuration",
-			"properties": {
-				"deluge.trace.server": {
-					"scope": "window",
-					"type": "string",
-					"enum": [
-						"off",
-						"messages",
-						"verbose"
-					],
-					"default": "off",
-					"description": "Traces the communication between VS Code and the deluge language server."
-				}
-			}
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "tsc -p ./ && webpack --mode production",
-		"compile": "tsc -p ./",
-		"compileDev": "tsc -p ./ &&  webpack --mode development",
-		"test": "sh ./scripts/e2e.sh",
-		"yaml-merge": "cd snippets && json-merger -p -o snippets.json .import.yaml",
-		"syntax-watch": "yaml2json -p -s -r -w .\\syntaxes\\deluge.tmLanguage.yaml"
-	},
-	"devDependencies": {
-		"@types/mocha": "^5.2.7",
-		"@types/node": "^12.7.2",
-		"file-loader": "^4.2.0",
-		"json-merger": "^1.1.1",
-		"mocha": "^6.2.0",
-		"ts-loader": "^6.0.4",
-		"tslint": "^5.18.0",
-		"typescript": "^3.5.3",
-		"url-loader": "^2.1.0",
-		"webpack": "^4.39.3",
-		"webpack-cli": "^3.3.7",
-		"yamljs": "^0.3.0"
-	},
-	"dependencies": {
-		"@types/request-promise-native": "^1.0.16",
-		"request": "^2.34",
-		"request-promise-native": "^1.0.7",
-		"vscode-extension-telemetry": "^0.1.2"
-	}
+  "name": "deluge",
+  "displayName": "Deluge",
+  "description": "Deluge language support for Visual Studio Code",
+  "version": "2.0.1",
+  "author": {
+    "name": "Yossi Ashkenazi",
+    "url": "https://github.com/YossiAshkenazi"
+  },
+  "galleryBanner": {
+    "color": "#278ee8",
+    "theme": "dark"
+  },
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "preview": true,
+  "publisher": "yossiashkenazi",
+  "main": "./dist/extension.js",
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YossiAshkenazi/deluge-langauge"
+  },
+  "license": "MIT",
+  "keywords": [
+    "deluge",
+    "zoho"
+  ],
+  "original-author": "GuruDhanush",
+  "contributes": {
+    "commands": [
+      {
+        "command": "delugelang.showView",
+        "title": "Shows the message part as rendered in client",
+        "category": "Deluge",
+        "enablement": "editorLangId == dg"
+      },
+      {
+        "command": "delugelang.restartLangServer",
+        "title": "Restarts the Deluge Language server",
+        "category": "Deluge",
+        "enablement": "editorLangId == dg"
+      }
+    ],
+    "languages": [
+      {
+        "id": "dg",
+        "extensions": [
+          ".dg"
+        ],
+        "aliases": [
+          "deluge",
+          "dg"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dg",
+        "scopeName": "source.dg",
+        "path": "./syntaxes/deluge.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "dg",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Deluge configuration",
+      "properties": {
+        "deluge.trace.server": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the deluge language server."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.74.0",
+    "file-loader": "^6.2.0",
+    "json-merger": "^1.1.2",
+    "mocha": "^10.8.2",
+    "ts-loader": "^9.4.4",
+    "tslint": "^6.1.3",
+    "typescript": "^4.9.5",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "yamljs": "^0.3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/YossiAshkenazi/deluge-langauge/issues"
+  },
+  "homepage": "https://github.com/YossiAshkenazi/deluge-langauge#readme",
+  "dependencies": {
+    "@types/request-promise-native": "^1.0.18",
+    "@types/vscode": "^1.74.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
+    "vscode-languageclient": "^8.1.0"
+  }
 }

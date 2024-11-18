@@ -1,10 +1,8 @@
 # Deluge-vscode
 
-An vscode language client for the [deluge lang](https://www.zoho.com/creator/deluge.html). It interfaces with the [Deluge lang server](https://github.com/GuruDhanush/Deluge-Language-Parser). 
+An vscode language client for the [deluge lang](https://www.zoho.com/creator/deluge.html). It interfaces with the [Deluge lang server](https://github.com/GuruDhanush/Deluge-Language-Parser).
 
-An Web editor is also available [here](https://gurudhanush.github.io/Deluge-Editor/).
-
-> The extension currently takes deluge code with `dg` file extension. 
+> The extension currently takes deluge code with `dg` file extension.
 
 
 ## Motivation
@@ -47,11 +45,11 @@ The message property of some methods can hold html content. An rendered form of 
 
 ### Diagnostics
 
-Errors in the code will be shown with red swiggly's. At the moment, type of error is not specified. Once the lang server implements incremental compilation, this will be updated. 
+Errors in the code will be shown with red swiggly's. At the moment, type of error is not specified. Once the lang server implements incremental compilation, this will be updated.
 
 ![codelens](./media/line-error.jpg)
 
-Lang server doesnot detect errors in if\for statement test lines. 
+Lang server doesnot detect errors in if\for statement test lines.
 
 > The state of the parser is shown in bottom left
 
@@ -64,9 +62,3 @@ Lang server doesnot detect errors in if\for statement test lines.
 
 * DateTime is implemented as due to inconsistency in the docs and implementation. i.e. whether to take `'sometext'` as string or validate as datetime.
 * This strictly runs deluge compatible with cliq only
-
-
-
-
-
-
